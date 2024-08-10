@@ -1,0 +1,47 @@
+\tikzset{
+  treenode/.style = {align=center, inner sep=0pt, text centered,
+    font=\sffamily\bfseries},
+  arn_n/.style = {treenode, circle, white, font=\sffamily\bfseries, draw=black,
+    shading = radial,inner color=black,outer color=brown,  text width=1.7em},% arbre rouge noir, noeud noir
+  arn_r/.style = {treenode, circle, black, draw=blue, 
+    text width=1.5em,very thick},% arbre rouge noir, noeud rouge
+  arn_x/.style = {treenode, rectangle,rounded corners=.09cm, draw=black,
+   fill = green, minimum width=0.5em, minimum height=0.9em}% arbre rouge noir, nil
+}
+
+\begin{tikzpicture}[->,>=stealth',level/.style={sibling distance = 9cm/#1,
+  level distance = 2cm}] 
+\node [arn_n] {$X_{0}$}
+    child{ node [arn_r] {$X_{1}$} 
+            child{ node [arn_n] {$X_{4}$} 
+            	child{ node [arn_x] {\footnotesize{$\{X_{0}, X_{4}\}$}} edge from parent node[above, sloped]
+                         {\footnotesize{$X_{4} = 1$}}} %for a named pointer
+							child{ node [arn_x] {\footnotesize{$\{X_{0}, \neg X_{4}\}$}} edge from parent node[above, sloped]
+                         {\footnotesize{$X_{4} = 0$}}
+							} edge from parent node[above, sloped]
+                         {\footnotesize{$X_{1} = 1$}}
+            }edge from parent node[above, sloped]
+                         {\footnotesize{$X_{0} = 0$}}
+    }
+    child{ node [arn_n] {$X_{2}$} 
+            child{ node [arn_n] {$X_{1}$} 
+							child{ node [arn_n] {$X_{3}$} 
+							child{node [arn_x] {\footnotesize{$\{\neg X{2}, X_{3}\}$}}edge from parent node[above, sloped]
+                         {\footnotesize{$X_{3} = 0$}}}
+							child{node [arn_x] {\footnotesize{$\{\neg X_{0}, \neg X_{2}, \neg X_{3}\}$}}edge from parent node[above, sloped]
+                         {\footnotesize{$X_{3} = 1$}}}edge from parent node[above, sloped]
+                         {\footnotesize{$X_{1} = 0$}}}
+							child{ node [arn_x] {\footnotesize{$\{X_{1}, \neg X_{2}\}$}}edge from parent node[above, sloped]
+                         {\footnotesize{$X_{1} = 1$}}}edge from parent node[above, sloped]
+                         {\footnotesize{$X_{2} = 1$}}
+            }
+            child{ node [arn_n] {$X_{3}$}
+							child{ node [arn_x] {\footnotesize{$\{X_{2}, X_{3}\}$}}edge from parent node[above, sloped]
+                         {\footnotesize{$X_{3} = 0$}}}
+							child{ node [arn_x] {\footnotesize{$\{X_{2}, \neg X_{3}\}$}}edge from parent node[above, sloped]
+                         {\footnotesize{$X_{3} = 1$}}}edge from parent node[above, sloped]
+                         {\footnotesize{$X_{2} = 0$}}
+            } edge from parent node[above, sloped]
+                         {\footnotesize{$X_{0} = 1$}}
+}; 
+\end{tikzpicture}

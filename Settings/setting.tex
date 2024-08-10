@@ -1,0 +1,587 @@
+% به‌نام دوست
+% در مورد تقدم و تاخر وارد کردن بسته ها تنها باید به چند نکته دقت کرد:
+% الف) بسته xepersian حتما حتما باید آخرین بسته ای باشد که فراخوانی می شود
+% ب) بسته hyperref جزو آخرین بسته هایی باید باشد که فراخوانی می شود.
+% ج) بسته glossaries حتما باید بعد از hyperref فراخوانی شود. 
+% د) بسته listings باید حتما قبل از  hyperref فراخوانی شود. 
+%#############################################################
+%How to start new chapters on the right hand side or odd numbered page
+% راه حل اول این‌که بجای داکیومنت کلاس report از داکیومنت کلاس book مثل زیر استفاده کنیم: 
+%\documentclass[a4paper,12pt]{book}
+%راه حل دوم این‌که از داکیومنت کلاس report با اپشن‌های زیر استفاده کنیم: 
+\documentclass[a4paper,12pt,twoside,openright]{report}
+%\documentclass[a4paper,12pt]{report}
+% بنابراین یکی از دو دستور فوق را فعال و دیگری را کامنت می‌کنیم تا تداخلی پیش نیاید. 
+%هر دو راه حل فوق با texlive2018 تست شد و مشاهده شد فصل‌های از صفحات فرد آغاز می‌شوند. 
+%بنابراین بهتر است از دستورات زیر استفاده نشود:
+%\documentclass[a4paper, 11pt]{report}
+%Abolfazl:
+%%\documentclass[a4paper,12pt]{report}
+%#############################################################s
+%.......................................................
+% برای تنظیم حاشیه صفحات از بسته geometry و به‌صورت زیر استفاده می‌کنیم.
+\usepackage[top=30mm, bottom=25mm, right=28mm,left=23mm]{geometry}
+%%Abolfazal:
+%\usepackage[top=30mm, bottom=30mm, right=28mm,left=23 mm]{geometry}
+%%Sample for ut from WWW:
+%\geometry{top=3cm, bottom=2.5cm, right=2.5cm,left=2cm}
+%%UT standard:
+%\usepackage[top=35mm, bottom=25mm, right=35mm,left = 25mm]{geometry}
+%My Settings:
+%بسته‌های مورد نیاز برای تایپ نمادهای ریاضی
+\usepackage{amsthm,amssymb,amsmath,amsfonts}
+%%setspace: Pro­vides sup­port for set­ting the spac­ing be­tween lines in a doc­u­ment. 
+%%fancyhdr: The pack­age pro­vides ex­ten­sive fa­cil­i­ties, both for con­struct­ing head­ers and foot­ers, and for con­trol­ling their use .
+%%fancyhdr:  بسته‌ لازم برای تنظیم سربرگ‌ها
+\usepackage{fancyhdr,setspace}
+%بسته‌هایی برای  ظاهر شدن شکل‌ها و تصاویر متن
+\usepackage{graphicx,graphics,color}
+%بسته‌ای برای قرار دادن دستگاه معادلات ریاضی در متن
+%Package for system of equation 
+\usepackage{systeme}
+
+\usepackage{subcaption}
+%......................LatexDraw's packages........................
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+\usepackage[space]{grffile} % For spaces in paths
+\usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+\patchcmd\Gread@eps{\@inputcheck#1}{\@inputcheck"#1"\relax}{}{}
+\makeatother
+%......................Drowing's packages...............
+\usepackage{import}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes, arrows}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{matrix}
+%\usepackage{tikz-qtree}
+%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+%\usepackage[upright]{fourier}
+% you can change the line above
+\usepackage{tkz-graph}
+%%%%%%%%%%%%
+%% Custom LaTeX package to draw AES-like rounds:
+\usepackage{diffpath}
+%%% Public TikZ libraries
+\usetikzlibrary{positioning}
+%%% Custom TikZ addons
+%\usetikzlibrary{crypto.symbols} 
+%سطر فوق زمانی استفاده می‌شود که فایل مذکور در مسیر اصلی باشد، وقتی در یک مسیر فرعی است از دستور زیر برای اضافه کردن آن استفاده می‌کنیم:
+\input{./CustomLatexPackages/tikzlibrarycrypto.symbols.code}
+%\usepackage{pstricks} is included in latexDraw
+
+%...................Sage packages.......................
+%\usepackage{sagetex}
+%\setlength{\sagetexindent}{1ex}
+%\renewcommand{\sagecommandlinetextoutput}{False}
+
+%%%%%%%%%%...................Algorithm's Packages................
+%%%Note that:
+%%algorithm - float wrapper for algorithms.
+%%algorithmic - first algorithm typesetting environment.
+%%algorithmicx - second algorithm typesetting environment.
+%%algpseudocode - layout for algorithmicx.
+%%algorithm2e - third algorithm typesetting environment.
+%%%%%%%%%
+%%When placed within the text without being encapsulated in a floating environment algorithmic environments may be split over a page boundary, greatly detracting from their appearance. In addition, it is useful to have algorithms numbered for reference and for lists of algorithms to be appended to the list of contents. The algorithm environment is meant to address these concerns by providing a floating environment for algorithms.
+
+%%The algorithmic environment provides an environment for describing algorithms and the algorithm environment provides a “float” wrapper for algorithms (implemented using algorithmic or some other method at the users’s option). The reason for two environments being provided is to allow the user maximum flexibility.
+\usepackage{algorithm}
+%%The package algorithmicx itself doesn’t define any algorithmic commands, but gives a set of macros to define such a command set. You may use only algorithmicx, and define the commands yourself, or you may use one of the predefined command sets
+
+%%If you are familiar with the algorithmic package, then you’ll find it easy to switch. You can use the old algorithms with the algcompatible layout, but please use the algpseudocode layout for new algorithms. To use algpseudocode, simply use \usepackage{algpseudocode}. You don’t need to manually load the algorithmicx package, as this is done by algpseudocode.
+%\usepackage{algorithmicx}
+%\usepackage{algcompatible}
+\usepackage[compatible]{algpseudocode} 
+%\usepackage{algorithmic}
+% Hide endif .etc
+%\usepackage[noend]{algpseudocode} 
+%%Other layouts:
+%\usepackage{program}
+%\usepackage{algorithm2e}
+% Need it for floating environment
+% Algorithmic modifications
+\makeatletter
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\algorithmicbreak}{\textbf{break}}
+\algnewcommand\algorithmicreturn{\textbf{return}}
+\algnewcommand\RETURN{\State   \algorithmicreturn  \space}
+\algnewcommand\algorithmicprint{\textbf{print}}
+\algnewcommand\PRINT{\State   \algorithmicprint  \space}
+%Redefine Procedure and Function:
+\algdef{SE}[PROCEDURE]{Procedure}{EndProcedure}%
+[2]{\algorithmicprocedure\ \textproc{#1}\ifthenelse{\equal{#2}{}}{}{(#2)}}%
+{\algorithmicend\ \algorithmicprocedure}%
+\algdef{SE}[FUNCTION]{Function}{EndFunction}%
+[2]{\algorithmicfunction\ \textproc{#1}\ifthenelse{\equal{#2}{}}{}{(#2)}}%
+{\algorithmicend\ \algorithmicfunction}%
+%Redefine AND:
+\algnewcommand\AND{\textbf{and}}
+\makeatother
+
+
+\usepackage{caption}
+% Need it for \caption*
+\usepackage{xspace}
+% Fix macro spacing bug
+
+%......................lstlisting for code..............
+\usepackage{listings}
+
+\lstdefinelanguage{Sage}[]{Python}
+{morekeywords={True,False,sage},
+	sensitive=true}
+
+\definecolor{Gray}{gray}{.5}
+
+\lstset{frame=none,
+	showtabs=False,
+	showspaces=False,
+	showstringspaces=False,
+	commentstyle={\color{orange}},%\color{oxygenorange}
+	keywordstyle={\color{blue}\bfseries},%\color{oxygenblue}
+	stringstyle ={\color{Gray}},
+	language = Sage,
+	basicstyle={\footnotesize\ttfamily}
+}
+
+%\lstset{language=sage,
+%	basicstyle=\ttfamily,
+%	keywordstyle=\color{blue}\ttfamily,
+%	stringstyle=\color{red}\ttfamily,
+%	commentstyle=\color{green}\ttfamily,
+%	morecomment=[l][\color{magenta}]{\#}
+%}
+
+%.............Typesetting quotations....................
+\usepackage{dirtytalk}
+\usepackage{csquotes}
+\usepackage{epigraph}
+%....................set Graphic's Path...................
+% برای اضافه کردن تصاویر به متن این امکان وجود دارد که تصاویر را در پوشه‌های متفاوت قرار داد. با این کار از زیاد شدن پرونده‌ها در مسیر مستند جلوگیری می شود.  از این رو تعداد مسیر به عنوان مسیرهای پیش فرض برای جستجوی تصاویر تعیین شده است.
+\graphicspath{{./}{./Images/}{./Images/TikzCode/}}
+%......................Font settings....................
+%برای رنگی کردن لینک ها و فعال سازی لینک ها در یک نوشتار از بسته hyperref استفاده می‌کنیم. 
+%\usepackage{hyperref}
+%\usepackage{anyfontsize}
+
+%%Black link to ref
+%\usepackage{hyperref}
+%\hypersetup{
+%	colorlinks = false,
+%	linkbordercolor = {white},
+%    pdfborder={0 0 0}
+%	%<your other options...>,
+%}
+% چنانچه قصد پرینت گرفتن نوشته خود را دارید، بلوک بالا را فعال و  دستور زیر را غیر فعال کنید که در این‌صورت، لینک‌ها به رنگ سیاه ظاهر خواهند شد که برای پرینت گرفتن، مناسب‌تر است.
+%%Colored link to ref
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+%------------------------------------------------------------------------
+% وارد کردن بسته glossaries و تنظیم‌های مربوط به آن: 
+% بسته‌ای برای وارد کردن واژه نامه در متن، این بسته باید بعد از hyperref حتما صدا زده شود. 
+\usepackage[xindy,acronym,nonumberlist=true]{glossaries}
+%%%%%% ============================================================================================================
+
+%%% تنظیمات مربوط به بسته  glossaries
+%%% تعریف استایل برای واژه نامه فارسی به انگلیسی، در این استایل واژه‌های فارسی در سمت راست و واژه‌های انگلیسی در سمت چپ خواهند آمد. از حالت گروه ‌بندی استفاده می‌کنیم، 
+%%% یعنی واژه‌ها در گروه‌هایی به ترتیب حروف الفبا مرتب می‌شوند، مثلا:
+%%% الف
+%%% افتصاد ................................... Economy
+%%% اشکال ........................................ Failure
+%%% ش
+%%% شبکه ...................................... Network
+\newglossarystyle{myFaToEn}{%
+	\renewenvironment{theglossary}{}{}
+	\renewcommand*{\glsgroupskip}{\vskip 10mm}
+	\renewcommand*{\glsgroupheading}[1]{\subsection*{\glsgetgrouptitle{##1}}}
+	\renewcommand*{\glossentry}[2]{\noindent\glsentryname{##1}\dotfill\space \glsentrytext{##1}
+		
+	}
+}
+
+%% % تعریف استایل برای واژه نامه انگلیسی به فارسی، در این استایل واژه‌های فارسی در سمت راست و واژه‌های انگلیسی در سمت چپ خواهند آمد. از حالت گروه ‌بندی استفاده می‌کنیم، 
+%% % یعنی واژه‌ها در گروه‌هایی به ترتیب حروف الفبا مرتب می‌شوند، مثلا:
+%% % E
+%%% Economy ............................... اقتصاد
+%% % F
+%% % Failure................................... اشکال
+%% %N
+%% % Network ................................. شبکه
+
+\newglossarystyle{myEntoFa}{%
+	%%% این دستور در حقیقت عملیات گروه‌بندی را انجام می‌دهد. بدین صورت که واژه‌ها در بخش‌های جداگانه گروه‌بندی می‌شوند، 
+	%%% عنوان بخش همان نام حرفی است که هر واژه در آن گروه با آن شروع شده است. 
+	\renewenvironment{theglossary}{}{}
+	\renewcommand*{\glsgroupskip}{\vskip 10mm}
+	\renewcommand*{\glsgroupheading}[1]{\begin{LTR} \subsection*{\glsgetgrouptitle{##1}} \end{LTR}}
+	%%% در این دستور نحوه نمایش واژه‌ها می‌آید. در این جا واژه فارسی در سمت راست و واژه انگلیسی در سمت چپ قرار داده شده است، و بین آن با نقطه پر می‌شود. 
+	\renewcommand*{\glossentry}[2]{\noindent\glsentrytext{##1}\dotfill\space \glsentryname{##1}
+		
+	}
+}
+
+%%% تعیین استایل برای فهرست اختصارات
+\newglossarystyle{myAbbrlist}{%
+	%%% این دستور در حقیقت عملیات گروه‌بندی را انجام می‌دهد. بدین صورت که اختصارات‌ در بخش‌های جداگانه گروه‌بندی می‌شوند، 
+	%%% عنوان بخش همان نام حرفی است که هر اختصار در آن گروه با آن شروع شده است. 
+	\renewenvironment{theglossary}{}{}
+	\renewcommand*{\glsgroupskip}{\vskip 10mm}
+	\renewcommand*{\glsgroupheading}[1]{\begin{LTR} \subsection*{\glsgetgrouptitle{##1}} \end{LTR}}
+	%%% در این دستور نحوه نمایش اختصارات می‌آید. در این جا حالت کوچک اختصار در سمت چپ و حالت بزرگ در سمت راست قرار داده شده است، و بین آن با نقطه پر می‌شود. 
+	\renewcommand*{\glossentry}[2]{\noindent\glsentrytext{##1}\dotfill\space \Glsentrylong{##1}
+		
+	}
+	%%% تغییر نام محیط abbreviation به فهرست اختصارات
+	\renewcommand*{\acronymname}{\rl{فهرست اختصارات}}
+}
+
+%%% برای اجرا xindy بر روی فایل .tex و تولید واژه‌نامه‌ها و فهرست اختصارات و فهرست نمادها یکسری  فایل تعریف شده است.‌ Latex داده های مربوط به واژه نامه و .. را در این 
+%%%  فایل‌ها نگهداری می‌کند. مهم‌ترین option‌ این قسمت این است که 
+%%% عنوان واژه‌نامه‌ها و یا فهرست اختصارات و یا فهرست نمادها را می‌توانید در این‌جا مشخص کنید. 
+%%% در این جا عباراتی مثل glg، gls، glo و ... پسوند فایل‌هایی است که برای xindy بکار می‌روند. 
+\newglossary[glg]{english}{gls}{glo}{واژه‌نامه انگلیسی به فارسی}
+\newglossary[blg]{persian}{bls}{blo}{واژه‌نامه فارسی به انگلیسی}
+\makeglossaries
+\glsdisablehyper
+%%% تعاریف مربوط به تولید واژه نامه و فهرست اختصارات و فهرست نمادها
+%%%  در این فایل یکسری دستورات عمومی برای وارد کردن واژه‌نامه آمده است.
+%%%  به دلیل این‌که قرار است این دستورات پایه‌ای را بازنویسی کنیم در این‌جا تعریف می‌کنیم. 
+\let\oldgls\gls
+\let\oldglspl\glspl
+
+\makeatletter
+
+\renewrobustcmd*{\gls}{\@ifstar\@msgls\@mgls}
+\newcommand*{\@mgls}[1] {\ifthenelse{\equal{\glsentrytype{#1}}{english}}{\oldgls{#1}\glsuseri{f-#1}}{\lr{\oldgls{#1}}}}
+\newcommand*{\@msgls}[1]{\ifthenelse{\equal{\glsentrytype{#1}}{english}}{\glstext{#1}\glsuseri{f-#1}}{\lr{\glsentryname{#1}}}}
+
+\renewrobustcmd*{\glspl}{\@ifstar\@msglspl\@mglspl}
+\newcommand*{\@mglspl}[1] {\ifthenelse{\equal{\glsentrytype{#1}}{english}}{\oldglspl{#1}\glsuseri{f-#1}}{\oldglspl{#1}}}
+\newcommand*{\@msglspl}[1]{\ifthenelse{\equal{\glsentrytype{#1}}{english}}{\glsplural{#1}\glsuseri{f-#1}}{\glsentryplural{#1}}}
+
+
+\newcommand{\glsuseriMy}[1]{\glsuseri{#1}\glsuseri{f-#1}}
+
+\makeatother
+
+\newcommand{\newword}[4]{
+	\newglossaryentry{#1}     {type={english},name={\lr{#2}},plural={#4},text={#3},description={}}
+	\newglossaryentry{f-#1} {type={persian},name={#3},text={\lr{#2}},description={}}
+}
+
+%%% بر طبق این دستور، در اولین باری که واژه مورد نظر از واژه‌نامه وارد شود، پاورقی زده می‌شود. 
+\defglsentryfmt[english]{\glsgenentryfmt\ifglsused{\glslabel}{}{\LTRfootnote{\glsentryname{\glslabel}}}}
+
+%%% بر طبق این دستور، در اولین باری که واژه مورد نظر از فهرست اختصارات وارد شود، پاورقی زده می‌شود. 
+\defglsentryfmt[acronym]{\glsentryname{\glslabel}\ifglsused{\glslabel}{}{\LTRfootnote{\glsentrydesc{\glslabel}}}}
+
+
+%%%%%% ============================================================================================================
+
+%%============================ دستور برای قرار دادن فهرست اختصارات 
+\newcommand{\printabbreviation}{
+	\cleardoublepage
+	\phantomsection
+	\baselineskip=.75cm
+	%% با این دستور عنوان فهرست اختصارات به فهرست مطالب اضافه می‌شود. 
+	\addcontentsline{toc}{chapter}{فهرست اختصارات}
+	\setglossarystyle{myAbbrlist}
+	\begin{LTR}
+		\Oldprintglossary[type=acronym]	
+	\end{LTR}
+	\clearpage
+}%
+
+\newcommand{\printacronyms}{\printabbreviation}
+%%% در این جا محیط هر دو واژه نامه را باز تعریف کرده ایم، تا اولا مشکل قرار دادن صفحه اضافی را حل کنیم، ثانیا عنوان واژه نامه ها را با دستور addcontentlist وارد فهرست مطالب کرده ایم.
+\let\Oldprintglossary\printglossary
+\renewcommand{\printglossary}{
+	\let\appendix\relax
+	%% تنظیم کننده فاصله بین خطوط در این قسمت
+	\clearpage
+	\phantomsection
+	%% این دستور موجب این می‌شود که واژه‌نامه‌ها در  حالت دو ستونی نوشته شود. 
+	\twocolumn{}
+	%% با این دستور عنوان واژه‌نامه به فهرست مطالب اضافه می‌شود. 
+	\addcontentsline{toc}{chapter}{واژه نامه انگلیسی به فارسی}
+	\setglossarystyle{myEntoFa}
+	\Oldprintglossary[type=english]
+	
+	\clearpage
+	\phantomsection
+	%% با این دستور عنوان واژه‌نامه به فهرست مطالب اضافه می‌شود. 
+	\addcontentsline{toc}{chapter}{واژه نامه فارسی به انگلیسی}
+	\setglossarystyle{myFaToEn}
+	\Oldprintglossary[type=persian]
+	\onecolumn{}
+}%
+%%%%%% ============================================================================================================
+%%%%%% ============================================================================================================
+%%% نحوه تعریف واژگان 
+
+%\newword{RandomVariable}{Random Variable}
+%{متغیر تصادفی}{متغیرهای تصادفی}
+%
+%\newword{Action}{Action}
+%{کنش}{کنش‌ها}
+%
+%\newword{Optimization}{Optimization}{بهینه‌سازی}{}
+
+
+%%%%%% ============================================================================================================
+
+%%% نحوه تعریف اختصارات
+%\newacronym{DFT}{DFT}{Discrete Fourier Transform}
+%
+%\newacronym{CDMA}{CDMA}{Code Division Multiplexing Access}
+%
+%\newacronym{BAN}{BAN}{Body Area Network}
+
+
+
+%%%%%% ============================================================================================================
+
+
+%------------------------------------------------------------------------
+%last package must be xepersian:
+%%زی‌پرشین (به انگلیسی: XePersian) یک بسته حروف‌چینی رایگان و متن‌باز برای نگارش مستندات پارسی/انگلیسی با زی‌لاتک است.
+%% در واقع، زی‌پرشین، کمک می‌کند تا به آسانی، مستندات را به پارسی، حروف‌چینی کرد. این بسته را وفا خلیقی نوشته است، و به طور منظم، آن را بروز‌رسانی کرده و باگ‌های آن را رفع می‌کند.
+%% نکته مهم این جا است که بسته Xepersian برای پشتیبانی از زبان فارسی آورده شده است، و می بایست آخرین بسته ای باشد که شما وارد می کنید، دقت کنید: آخرین بسته 
+\usepackage{xepersian}
+%%تعریف فونت فارسی
+\settextfont[Scale=1.2]{XB Niloofar}
+%\settextfont[Scale=1.3]{B Nazanin}
+%%تعریف فونت برای اعداد و ارقام 
+\setdigitfont[Scale=1.1]{Yas}%Yas represent zerso by small circle insted of filled point
+%%تعریف فونت عبارات لاتین
+%\setlatintextfont[Scale=1]{Times New Roman}
+%\setlatintextfont[Scale=1.1]{Linux Libertine}
+% تعریف قلم‌های فارسی و انگلیسی اضافی برای استفاده در بعضی از قسمت‌های متن
+\defpersianfont\nastaliq[Scale=2]{IranNastaliq}
+\defpersianfont\moalla[Scale=2]{Moalla}
+\date{}
+%.......................................................
+%تنظیم فاصله بین خطوط 
+%\baselineskip=.75cm
+%\linespread{1}
+%توصیه وفا این است که از قطعه کد زیر برای تنظیم فاصله خطوط استفاده شود.
+\makeatletter
+\newcommand*{\Computebaselinestretch}[1]{%
+	\strip@pt\dimexpr\number\numexpr\number\dimexpr#1\relax*65536/\number\dimexpr\baselineskip\relax\relax sp\relax
+}
+\makeatother
+\linespread{\Computebaselinestretch{0.75cm}}
+%......................................................................
+%تعریف برخی از فونت‌های فارسی
+%................Multiplication note (Auto).............
+% دستور زیر سبب می‌شود تا "*" در معادلات ریاضی به شکل ضرب اسکالر ظاهر شود. 
+\mathcode`\*="8000
+{\catcode`\*\active\gdef*{\cdot}}
+
+%.......Equivalence relation with note above it
+% تعریف دستور جدید برای نمادی تساوی با متن بالای سر. 
+\newcommand{\equitext}[1]{\ensuremath{\stackrel{\text{#1}}{\equiv}}}
+
+%........Inequality relation with note below............
+% تعریف دستورات جدید برای نماد نامساوی با متن زیرین.
+\newcommand{\geqtext}[1]{\underset{#1}{\geq}}
+\newcommand{\gtext}[1]{\underset{#1}{>}}
+\newcommand{\leqtext}[1]{\underset{#1}{\leq}}
+\newcommand{\ltext}[1]{\underset{#1}{<}}
+%.......................................................
+
+\newcommand{\mb}[2][n]{\mathbb{#2}^{#1}}
+\newcommand{\mr}[1]{\mathrm{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\vect}[2][x]{(#1_1,\ldots, #1_#2)}
+\newcommand{\set}[2][g]{\{ #1_1,\ldots, #1_#2\} }
+%.......................................................
+
+%..........................Algebraic Notes...............................
+%.............Groebner Basis Notes...................................
+\newcommand{\fld}{\textit{K}}
+\newcommand{\ffld}{\mathbb{F}}
+\newcommand{\qffld}{\mathbb{F}}
+\newcommand{\fpolyring}{\mathbb{F}[x_{1},...,x_{n}]}
+\newcommand{\qfpolyring}{\mathbb{F}_{q}[x_{1},...,x_{n}]}
+\newcommand{\polyring}{\textit{K}[x_{1},...,x_{n}]}
+\newcommand{\xmonomial}{x_{1}^{\alpha_{1}}...x_{n}^{\alpha_{n}}}
+\newcommand{\zedn}{\mathbb{Z}_{\geq 0}^{n}}
+\newcommand{\tn}{{\mathbb{T}}^{n}}
+\newcommand{\tnd}{{\mathbb{T}}^{n}_{\leq d}}
+\newcommand{\po}{\partial\mathcal{O}}%border of order ideal
+\newcommand{\pok}[1]{\partial^{#1}\mathcal{O}}
+\newcommand{\orderideal}{\{t_{1},...,t_{\mu}\}}
+\newcommand{\border}{\{b_{1},...,b_{\nu}\}}
+\newcommand{\prebasis}{\{g_{1},...,g_{\nu}\}}
+
+\DeclareMathOperator{\supp}{\mathrm{supp}}
+\DeclareMathOperator{\inn}{\mathrm{in}}
+\DeclareMathOperator{\mdeg}{\mathrm{multideg}}
+\DeclareMathOperator{\lc}{\mathrm{LC}}
+\DeclareMathOperator{\lm}{\mathrm{LM}}
+\DeclareMathOperator{\lt}{\mathrm{LT}}
+\DeclareMathOperator{\lcm}{\mathrm{LCM}}
+\DeclareMathOperator{\nf}{\mathrm{NF}}
+\DeclareMathOperator{\nr}{\mathrm{NR}}
+\DeclareMathOperator{\bof}{\mathrm{BF}}
+\DeclareMathOperator{\kerr}{\mathrm{Ker}}
+\DeclareMathOperator{\vol}{\mathrm{Vol}}
+\DeclareMathOperator{\ind}{\mathrm{ind}}
+\DeclareMathOperator{\level}{\mathrm{level}}
+\DeclareMathOperator{\Supp}{\mathrm{Supp}}
+\DeclareMathOperator{\Free}{\mathrm{Free}}
+\DeclareMathOperator{\mleft}{\mathrm{Left}}
+\DeclareMathOperator{\mright}{\mathrm{Right}}
+\DeclareMathOperator{\mat}{\mathrm{Mat}}
+\newcommand{\reduceto}[1]{\xrightarrow[#1]{}}
+
+%......................Crypto Notations.................
+\newsavebox\mybox
+\newcommand{\mA}{{\mathcal A}}
+\newcommand{\mB}{{\mathcal B}}
+\newcommand{\mC}{{\mathcal C}}
+\newcommand{\mD}{{\mathcal D}}
+\newcommand{\mE}{{\mathcal E}}
+\newcommand{\mF}{{\mathcal F}}
+\newcommand{\mG}{{\mathcal G}}
+\newcommand{\mH}{{\mathcal H}}
+\newcommand{\mI}{{\mathcal I}}
+\newcommand{\mJ}{{\mathcal J}}
+\newcommand{\mK}{{\mathcal K}}
+\newcommand{\mL}{{\mathcal L}}
+\newcommand{\mM}{{\mathcal M}}
+\newcommand{\mN}{{\mathcal N}}
+\newcommand{\mO}{{\mathcal O}}
+\newcommand{\mP}{{\mathcal P}}
+\newcommand{\mQ}{{\mathcal Q}}
+\newcommand{\mR}{{\mathcal R}}
+\newcommand{\mS}{{\mathcal S}}
+\newcommand{\mT}{{\mathcal T}}
+\newcommand{\mU}{{\mathcal U}}
+\newcommand{\mV}{{\mathcal V}}
+\newcommand{\mW}{{\mathcal W}}
+\newcommand{\mX}{{\mathcal X}}
+\newcommand{\mY}{{\mathcal Y}}
+\newcommand{\mZ}{{\mathcal Z}}
+
+\newcommand{\hs}{\heartsuit}
+\newcommand{\cs}{\clubsuit}
+\renewcommand{\sp}{\spadesuit}
+\newcommand{\ds}{\diamondsuit}
+\newcommand{\noi}{\noindent}
+\newcommand{\exi}{\exists}
+\newcommand{\fa}{\forall}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\la}{\leftarrow}
+%\newcommand{\qed}{\mbox{}\hspace*{\fill}\nolinebreak\mbox{$\rule{0.6em}{0.6em}$}} %%to end your proof write $\qed$.
+
+%%Cryptosystem
+\newcommand{\Enc}{\mathsf{Enc}}
+\newcommand{\Dec}{\mathsf{Dec}}
+\newcommand{\Gen}{\mathsf{Gen}}
+\newcommand{\Sign}{\mathsf{Sign}}
+\newcommand{\init}{\mathsf{Init}}
+\newcommand{\getbits}{\mathsf{GetBits}}
+\newcommand{\negl}{\mathsf{negl}}
+%%PRF
+\newcommand{\Func}{\mathsf{Func}}
+\newcommand{\Perm}{\mathsf{Perm}}
+\newcommand{\RF}{\mathsf{RF}}
+\newcommand{\RP}{\mathsf{RP}}
+%%MAC
+\newcommand{\Mac}{\mathsf{Mac}}
+\newcommand{\Vrfy}{\mathsf{Vrfy}}
+%%key exchange protocol
+\newcommand{\DHp}{\mathsf{DH}}
+%------------------groups----------
+\newcommand{\GroupGen}{\mathsf{GroupGen}}
+%%message space, ..
+\newcommand{\pspace}{\mathcal{M}}
+\newcommand{\kspace}{\mathcal{K}}
+\newcommand{\cspace}{\mathcal{C}}
+%%adversary
+\newcommand{\Adv}{\mathcal{A}}
+\newcommand{\AdvD}{\mathcal{D}}
+%%Experiments
+\newcommand{\ExpPrivK}[2]{\mathsf{PrivK}_{#1,#2}^{\eav}}
+\newcommand{\ExpPrivKmult}[2]{\mathsf{PrivK}_{#1,#2}^{\mult}}
+\newcommand{\ExpPrivKcpa}[2]{\mathsf{PrivK}_{#1,#2}^{\cpa}}
+\newcommand{\ExpPrivKcca}[2]{\mathsf{PrivK}_{#1,#2}^{\cca}}
+\newcommand{\ExpPubK}[2]{\mathsf{PubK}_{#1,#2}^{\eav}}
+\mathchardef\mhyphen="2D
+\newcommand{\ExpSMacForge}[2]{\mathsf{Mac\mhyphen sforge}_{#1,#2}}
+\newcommand{\ExpEncForge}[2]{\mathsf{Enc\mhyphen Forge}_{#1,#2}}
+\newcommand{\ExpKE}[2]{\mathsf{KE}_{#1,#2}}
+\newcommand{\ExpSignForge}[2]{\mathsf{PrivK}_{#1,#2}}
+%%text up
+\newcommand{\eav}{\textup{eav}}
+\newcommand{\mult}{\textup{mult}}
+\newcommand{\cpa}{\textup{cpa}}
+\newcommand{\cca}{\textup{cca}}
+
+%---------------------------------
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Negl}{\mathsf{NEG}}
+\newcommand{\poly}{\mathsf{Poly}}
+\newcommand{\nuppt}{\mathsf{nuPPT}}
+\newcommand{\ppt}{\mathsf{PPT}}
+\newcommand{\bpp}{\mathsf{BPP}}
+\newcommand{\szk}{\mathsf{SZK}}
+\newcommand{\pzk}{\mathsf{PZK}}
+\newcommand{\czk}{\mathsf{CZK}}
+
+\newcommand{\Zstar}{\mathbb{Z}^{*}}
+\newcommand{\gG}{\mathbb{G}}
+\newcommand{\gf}{\mathbb{GF}}
+%---------------------------
+\newcommand{\view}{\mathsf{view}}
+\newcommand{\outp}{\mathsf{output}}
+\newcommand{\Sim}{\mathcal{S}}
+%--------------------end of Crypto notes.............................
+%%Tab
+\newcommand{\tab}{\hspace*{2em}}
+%.........language: \lr <----> \en
+\newcommand{\en}{\lr}
+
+% تعریف و نحوه ظاهر شدن عنوان قضیه‌ها، تعریف‌ها، مثال‌ها و ...
+%.....................Theorem numbering - way1.......................
+%\newenvironment{proof}{\par\textbf{برهان.}}{\mbox{}\hspace*{\fill}\nolinebreak\mbox{$\rule{0.6em}{0.6em}$}}
+%\newenvironment{claim}{\par\textbf{ادعا.}}{}
+%\newtheorem{lemma}{لم}
+%\newtheorem{theorem}[lemma]{قضیه}
+%\newtheorem{definition}{تعریف}
+%\newtheorem{proposition}{گزاره}
+%\newtheorem{recall}{یادآوری}
+%\newtheorem{remark}{نکته}
+%\newtheorem{example}[definition]{مثال}
+%\newtheorem{corollary}[definition]{نتیجه}
+%...................Theorem numbering - way2..........................
+\theoremstyle{definition}
+\newtheorem{definition}{تعریف}[chapter]
+\newtheorem{theorem}[definition]{قضیه}
+\newtheorem{lemma}[definition]{لم}
+\newtheorem{proposition}[definition]{گزاره}
+\newtheorem{corollary}[definition]{نتیجه}
+\newtheorem{remark}[definition]{نکته}
+\newtheorem{example}[definition]{مثال}
+\newtheorem{namad}[definition]{نمادگذاری}
+\newtheorem{yad}[definition]{یادآوری}
+%\newtheorem{alg}[algorithm]{الگوریتم}
+\newtheorem{question}[definition]{سوال}
+\newtheorem{answer}[definition]{جواب}
+%.......................................................
+\renewcommand{\proofname}{\textbf{برهان}}
+%\renewcommand{\bibname}{مراجع}
+%.......................................................
+%\pagestyle{fancy}
+\pagestyle{headings}

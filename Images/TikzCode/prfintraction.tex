@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+\bf
+\draw [ dash pattern = on 4pt off 3pt, shading  = radial] (-2,3) rectangle (9.5,-1);
+
+\draw[]  (-1, 2)  rectangle node {
+	چالشگر
+	} (1,0);
+
+\draw [-latex'](1,0.5)  -- node[midway, below] {$f(x_{i})$} (6.5,0.5);
+\draw[] (6.5, 2) rectangle node[] {
+	مهاجم
+	} (8.5, 0);
+\draw [-latex'](6.5,1.2) -- node[midway, below] {$x_{i}\in \{0, 1\}^{n}$} (1,1.2);
+\draw [-latex'](0,3.5) node[above] {$b$}-- (0,2);
+\draw [-latex'](7.5,0) --  (7.5,-1.5) node[below] {$b'\gets \{0, 1\}$};
+
+\node[] at (3.9,2) {\begin{tabular}{l}
+	$b = 0: k\gets \mK, f\gets \{f_{k}: k\in  \mK\}$\\
+	$b = 1: f\gets \Func_{n}$
+	\end{tabular}};
+\end{tikzpicture}

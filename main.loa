@@ -1,0 +1,32 @@
+\contentsline {algorithm}{\numberline {1}{\ignorespaces الگوریتم تقسیم در $\textit {K}[x_{1},...,x_{n}]$\relax }}{47}{algorithm.1}%
+\contentsline {algorithm}{\numberline {2}{\ignorespaces الگوریتم بوخبرگر برای محاسبه‌ی پایه‌ گروبنر\relax }}{57}{algorithm.2}%
+\contentsline {algorithm}{\numberline {3}{\ignorespaces الگوریتم تقسیم مرزی\relax }}{66}{algorithm.3}%
+\contentsline {algorithm}{\numberline {4}{\ignorespaces الگوریتم تغییر پایه برای محاسبه‌ پایه‌ مرزی\relax }}{84}{algorithm.4}%
+\contentsline {algorithm}{\numberline {5}{\ignorespaces الگوریتم حذف گاوس برای چندجمله‌ای‌ها- \lr {GaussEL}\relax }}{88}{algorithm.5}%
+\contentsline {algorithm}{\numberline {6}{\ignorespaces الگوریتم محاسبه‌ی پوشش پایای یک فضای برداری\relax }}{89}{algorithm.6}%
+\contentsline {algorithm}{\numberline {7}{\ignorespaces الگوریتم تحویل نهایی- \lr {Final Reduction}\relax }}{91}{algorithm.7}%
+\contentsline {algorithm}{\numberline {8}{\ignorespaces الگوریتم محاسبه‌ی پایه‌ مرزی-\lr {BBA}\relax }}{92}{algorithm.8}%
+\contentsline {algorithm}{\numberline {9}{\ignorespaces الگوریتم بوخبرگر-مولر۱\relax }}{99}{algorithm.9}%
+\contentsline {algorithm}{\numberline {10}{\ignorespaces الگوریتم بوخبرگر-مولر۲\relax }}{153}{algorithm.10}%
+\contentsline {algorithm}{\numberline {11}{\ignorespaces الگوریتم رمزنگاری در \lr {KeeLoq}\relax }}{154}{algorithm.11}%
+\contentsline {algorithm}{\numberline {12}{\ignorespaces الگوریتم رمزگشایی در \lr {KeeLoq}\relax }}{154}{algorithm.12}%
+\contentsline {algorithm}{\numberline {13}{\ignorespaces الگوریتم رمزنگاری \lr {AES}\relax }}{155}{algorithm.13}%
+\contentsline {algorithm}{\numberline {14}{\ignorespaces الگوریتم به‌روزرسانی و تولید کلید اجرایی در رمز دنباله‌ای \lr {Trivium}\relax }}{155}{algorithm.14}%
+\contentsline {algorithm}{\numberline {15}{\ignorespaces مرحله آغازسازی در رمز دنباله‌ای \lr {Trivium}\relax }}{155}{algorithm.15}%
+\contentsline {algorithm}{\numberline {16}{\ignorespaces الگوریتم به‌روزرسانی و تولید کلید اجرایی در رمز دنباله‌ای \lr {Bivium}\relax }}{156}{algorithm.16}%
+\contentsline {algorithm}{\numberline {17}{\ignorespaces الگوریتم رمزنگاری \lr {Trivium}\relax }}{156}{algorithm.17}%
+\contentsline {algorithm}{\numberline {18}{\ignorespaces استخراج معادلات از درجه حداکثر ۲ حاکم بر \lr {Trivium}\relax }}{156}{algorithm.18}%
+\contentsline {algorithm}{\numberline {19}{\ignorespaces الگوریتم- \lr {XL}\relax }}{163}{algorithm.19}%
+\contentsline {algorithm}{\numberline {20}{\ignorespaces \lr {$T'$-Method}\relax }}{174}{algorithm.20}%
+\contentsline {algorithm}{\numberline {21}{\ignorespaces الگوریتم \lr {XSL}\relax }}{178}{algorithm.21}%
+\contentsline {algorithm}{\numberline {22}{\ignorespaces الگوریتم \lr {MXL}\relax }}{180}{algorithm.22}%
+\contentsline {algorithm}{\numberline {23}{\ignorespaces الگوریتم بهبود‌یافته‌ پایه‌ مرزی\relax }}{193}{algorithm.23}%
+\contentsline {algorithm}{\numberline {24}{\ignorespaces الگوریتم انشعاب و تحدید برای حل مسئله‌ی \lr {IP}\relax }}{196}{algorithm.24}%
+\contentsline {algorithm}{\numberline {25}{\ignorespaces الگوریتم تبدیل دستگاه معادلات به مسئله‌ی برنامه‌ریزی عدد صحیح و سپس حل آن\relax }}{228}{algorithm.25}%
+\contentsline {algorithm}{\numberline {26}{\ignorespaces الگوریتم \texttt {GSAT} برای حل مسئله صدق‌پذیری\relax }}{229}{algorithm.26}%
+\contentsline {algorithm}{\numberline {27}{\ignorespaces الگوریتم \texttt {WalkSAT} برای حل مسئله صدق‌پذیری\relax }}{229}{algorithm.27}%
+\contentsline {algorithm}{\numberline {28}{\ignorespaces الگوریتم \lr {DP} برای حل مسئله صدق‌پذیری\relax }}{230}{algorithm.28}%
+\contentsline {algorithm}{\numberline {29}{\ignorespaces الگوریتم \lr {DPLL} برای حل مسئله صدق‌پذیری\relax }}{231}{algorithm.29}%
+\contentsline {algorithm}{\numberline {30}{\ignorespaces الگوریتم \lr {AnalyzeConflict} به‌کار رفته در الگوریتم \lr {CDCL}\relax }}{231}{algorithm.30}%
+\contentsline {algorithm}{\numberline {31}{\ignorespaces الگوریتم \lr {CDCL}\relax }}{232}{algorithm.31}%
+\contentsline {algorithm}{\numberline {32}{\ignorespaces الگوریتم تبدیل دستگاه معادلات چندجمله‌ای روی $\mathbb {F}_{2}$ به مسئله صدق‌پذیری\relax }}{233}{algorithm.32}%

@@ -1,0 +1,165 @@
+\begin{tikzpicture}[scale=0.7]
+
+\tikzstyle{every node}=[transform shape];
+\begin{scope}[xshift=-4cm, shift={(-0.5,-1)}]
+\begin{scope}[xshift=0cm]
+\draw (0,3) rectangle node {\scriptsize $k_{i-1,0}$} +(1,1);
+\draw (0,2) rectangle node {\scriptsize $k_{i-1,1}$} +(1,1);
+\draw (0,1) rectangle node {\scriptsize $k_{i-1,2}$} +(1,1);
+\draw (0,0) rectangle node {\scriptsize $k_{i-1,3}$} +(1,1);
+\draw (1,3) rectangle node {\scriptsize $k_{i-1,4}$} +(1,1);
+\draw (1,2) rectangle node {\scriptsize $k_{i-1,5}$} +(1,1);
+\draw (1,1) rectangle node {\scriptsize $k_{i-1,6}$} +(1,1);
+\draw (1,0) rectangle node {\scriptsize $k_{i-1,7}$} +(1,1);
+\draw (2,3) rectangle node {\scriptsize $k_{i-1,8}$} +(1,1);
+\draw (2,2) rectangle node {\scriptsize $k_{i-1,9}$} +(1,1);
+\draw (2,1) rectangle node {\scriptsize $k_{i-1,10}$} +(1,1);
+\draw (2,0) rectangle node {\scriptsize $k_{i-1,11}$} +(1,1);
+\draw (3,3) rectangle node {\scriptsize $k_{i-1,12}$} +(1,1);
+\draw (3,2) rectangle node {\scriptsize $k_{i-1,13}$} +(1,1);
+\draw (3,1) rectangle node {\scriptsize $k_{i-1,14}$} +(1,1);
+\draw (3,0) rectangle node {\scriptsize $k_{i-1,15}$} +(1,1);
+\end{scope}
+
+\begin{scope}[yshift=-9cm]
+\draw (0,3) rectangle node {\scriptsize $k_{i,0}$} +(1,1);
+\draw (0,2) rectangle node {\scriptsize $k_{i,1}$} +(1,1);
+\draw (0,1) rectangle node {\scriptsize $k_{i,2}$} +(1,1);
+\draw (0,0) rectangle node {\scriptsize $k_{i,3}$} +(1,1);
+\draw (1,3) rectangle node {\scriptsize $k_{i,4}$} +(1,1);
+\draw (1,2) rectangle node {\scriptsize $k_{i,5}$} +(1,1);
+\draw (1,1) rectangle node {\scriptsize $k_{i,6}$} +(1,1);
+\draw (1,0) rectangle node {\scriptsize $k_{i,7}$} +(1,1);
+\draw (2,3) rectangle node {\scriptsize $k_{i,8}$} +(1,1);
+\draw (2,2) rectangle node {\scriptsize $k_{i,9}$} +(1,1);
+\draw (2,1) rectangle node {\scriptsize $k_{i,10}$} +(1,1);
+\draw (2,0) rectangle node {\scriptsize $k_{i,11}$} +(1,1);
+\draw (3,3) rectangle node {\scriptsize $k_{i,12}$} +(1,1);
+\draw (3,2) rectangle node {\scriptsize $k_{i,13}$} +(1,1);
+\draw (3,1) rectangle node {\scriptsize $k_{i,14}$} +(1,1);
+\draw (3,0) rectangle node {\scriptsize $k_{i,15}$} +(1,1);
+\end{scope}
+
+\draw[->] (0.5,0) -- ++(0,-1+0.25);
+\draw[] (0.5,-1) circle (0.25);
+\draw[] (0.25,-1) -- ++(0.5,0);  
+\draw[->] (3.5,-1) -- ++(-3+0.25,0);
+%\draw[fill=white] (2.5+0.2,-1-0.25) rectangle node{\large\texttt{<<<}} ++(1-0.4,0.5);
+\draw[fill=white] (1.5+0.2,-1-0.25) rectangle node {\textsf{$F_{i}$}} ++(1-0.4,0.5);
+\draw[->] (0.5,-1+0.25) --  ++(0,-4.5+0.25);
+
+\draw[->] (1.5,0) -- ++(0,-2+0.25);
+\draw[->] (1.5,-2+0.25) -- ++(0,-3.25);
+\draw[->] (0.5,-2) -- ++(1-0.25,0);
+\draw[]   (1.5,-2) circle (0.25);
+\draw[]   (1.25,-2) -- ++(0.5,0);  
+
+\draw[->] (2.5,0) -- ++(0,-3+0.25);
+\draw[->] (2.5,-3+0.25) -- ++(0,-2.25);
+\draw[->] (1.5,-3) -- ++(1-0.25,0);
+\draw[]   (2.5,-3) circle (0.25);
+\draw[]   (2.25,-3) -- ++(0.5,0);  
+
+\draw[->] (3.5,0) -- ++(0,-4+0.25);
+\draw[->] (3.5,-4+0.25) -- ++(0,-1.25);
+\draw[->] (2.5,-4) -- ++(1-0.25,0);
+\draw[]   (3.5,-4) circle (0.25);
+\draw[]   (3.25,-4) -- ++(0.5,0);  
+\end{scope}
+\node[draw] at (-2.5,-10.5) {AES-128};
+
+\begin{scope}[xshift = 4cm]
+\begin{scope}[xshift=0cm]
+\draw (0,3) rectangle node {\scriptsize $k_{i-1,0}$} +(1,1);
+\draw (0,2) rectangle node {\scriptsize $k_{i-1,1}$} +(1,1);
+\draw (0,1) rectangle node {\scriptsize $k_{i-1,2}$} +(1,1);
+\draw (0,0) rectangle node {\scriptsize $k_{i-1,3}$} +(1,1);
+\draw (1,3) rectangle node {\scriptsize $k_{i-1,4}$} +(1,1);
+\draw (1,2) rectangle node {\scriptsize$k_{i-1,5}$} +(1,1);
+\draw (1,1) rectangle node {\scriptsize$k_{i-1,6}$} +(1,1);
+\draw (1,0) rectangle node {\scriptsize$k_{i-1,7}$} +(1,1);
+\draw (2,3) rectangle node {\scriptsize$k_{i-1,8}$} +(1,1);
+\draw (2,2) rectangle node {\scriptsize$k_{i-1,9}$} +(1,1);
+\draw (2,1) rectangle node {\scriptsize$k_{i-1,10}$} +(1,1);
+\draw (2,0) rectangle node {\scriptsize$k_{i-1,11}$} +(1,1);
+\draw (3,3) rectangle node {\scriptsize$k_{i-1,12}$} +(1,1);
+\draw (3,2) rectangle node {\scriptsize$k_{i-1,13}$} +(1,1);
+\draw (3,1) rectangle node {\scriptsize$k_{i-1,14}$} +(1,1);
+\draw (3,0) rectangle node {\scriptsize$k_{i-1,15}$} +(1,1);
+\draw (4,3) rectangle node {\scriptsize$k_{i-1,16}$} +(1,1);
+\draw (4,2) rectangle node {\scriptsize$k_{i-1,17}$} +(1,1);
+\draw (4,1) rectangle node {\scriptsize$k_{i-1,18}$} +(1,1);
+\draw (4,0) rectangle node {\scriptsize$k_{i-1,19}$} +(1,1);
+\draw (5,3) rectangle node {\scriptsize$k_{i-1,20}$} +(1,1);
+\draw (5,2) rectangle node {\scriptsize$k_{i-1,21}$} +(1,1);
+\draw (5,1) rectangle node {\scriptsize$k_{i-1,22}$} +(1,1);
+\draw (5,0) rectangle node {\scriptsize$k_{i-1,23}$} +(1,1);
+\end{scope}
+
+\begin{scope}[yshift=-11cm]
+\draw (0,3) rectangle node {\scriptsize $k_{i,0}$} +(1,1);
+\draw (0,2) rectangle node {\scriptsize$k_{i,1}$} +(1,1);
+\draw (0,1) rectangle node {\scriptsize$k_{i,2}$} +(1,1);
+\draw (0,0) rectangle node {\scriptsize$k_{i,3}$} +(1,1);
+\draw (1,3) rectangle node {\scriptsize$k_{i,4}$} +(1,1);
+\draw (1,2) rectangle node {\scriptsize$k_{i,5}$} +(1,1);
+\draw (1,1) rectangle node {\scriptsize$k_{i,6}$} +(1,1);
+\draw (1,0) rectangle node {\scriptsize$k_{i,7}$} +(1,1);
+\draw (2,3) rectangle node {\scriptsize$k_{i,8}$} +(1,1);
+\draw (2,2) rectangle node {\scriptsize$k_{i,9}$} +(1,1);
+\draw (2,1) rectangle node {\scriptsize$k_{i,10}$} +(1,1);
+\draw (2,0) rectangle node {\scriptsize$k_{i,11}$} +(1,1);
+\draw (3,3) rectangle node {\scriptsize$k_{i,12}$} +(1,1);
+\draw (3,2) rectangle node {\scriptsize$k_{i,13}$} +(1,1);
+\draw (3,1) rectangle node {\scriptsize$k_{i,14}$} +(1,1);
+\draw (3,0) rectangle node {\scriptsize$k_{i,15}$} +(1,1);
+\draw (4,3) rectangle node {\scriptsize$k_{i,16}$} +(1,1);
+\draw (4,2) rectangle node {\scriptsize$k_{i,17}$} +(1,1);
+\draw (4,1) rectangle node {\scriptsize$k_{i,18}$} +(1,1);
+\draw (4,0) rectangle node {\scriptsize$k_{i,19}$} +(1,1);
+\draw (5,3) rectangle node {\scriptsize$k_{i,20}$} +(1,1);
+\draw (5,2) rectangle node {\scriptsize$k_{i,21}$} +(1,1);
+\draw (5,1) rectangle node {\scriptsize$k_{i,22}$} +(1,1);
+\draw (5,0) rectangle node {\scriptsize$k_{i,23}$} +(1,1);
+\end{scope}
+
+\draw[->] (0.5,0) -- ++(0,-1+0.25);
+\draw[] (0.5,-1) circle (0.25);
+\draw[] (0.25,-1) -- ++(0.5,0);  
+\draw[->] (5.5,-1) -- ++(-5+0.25,0);
+%\draw[fill=white] (4.5+0.2,-1-0.25) rectangle node{\large\texttt{<<}} ++(1-0.4,0.5);
+\draw[fill=white] (3.5+0.2,-1-0.25) rectangle node{\large\textsf{$F_{i}$}} ++(1-0.4,0.5);
+\draw[->] (0.5,-1+0.25) -- ++(0,-6.5+0.25);
+
+\draw[->] (1.5,0) -- ++(0,-2+0.25);
+\draw[->] (1.5,-2+0.25) -- ++(0,-5.25);
+\draw[->] (0.5, -2) -- ++(1-0.25,0);
+\draw[]   (1.5,-2) circle (0.25);
+\draw[]   (1.25,-2) -- ++(0.5,0);  
+
+\draw[->] (2.5,0) -- ++(0,-3+0.25);
+\draw[->] (2.5,-3+0.25) -- ++(0,-4.25);
+\draw[->] (1.5, -3) -- ++(1-0.25,0);
+\draw[]   (2.5,-3) circle (0.25);
+\draw[]   (2.25,-3) -- ++(0.5,0);  
+
+\draw[->] (3.5,0) -- ++(0,-4+0.25);
+\draw[->] (3.5,-4+0.25) -- ++(0,-3.25);
+\draw[->] (2.5, -4) -- ++(1-0.25,0);
+\draw[]   (3.5,-4) circle (0.25);
+\draw[]   (3.25,-4) -- ++(0.5,0);  
+
+\draw[->] (4.5,0) -- ++(0,-5+0.25);
+\draw[->] (4.5,-5+0.25) -- ++(0,-2.25);
+\draw[->] (3.5, -5) -- ++(1-0.25,0);
+\draw[]   (4.5,-5) circle (0.25);
+\draw[]   (4.25,-5) -- ++(0.5,0);  
+
+\draw[->] (5.5,0) -- ++(0,-6+0.25);
+\draw[->] (5.5,-6+0.25) -- ++(0,-1.25);
+\draw[->] (4.5, -6) -- ++(1-0.25,0);
+\draw[]   (5.5,-6) circle (0.25);
+\draw[]   (5.25,-6) -- ++(0.5,0);  \
+\end{scope}
+\node[draw] at (7,-11.5) {AES-192};
+\end{tikzpicture}

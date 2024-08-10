@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+\draw [ dash pattern = on 4pt off 3pt, shading = radial] (-2,3) rectangle (9.5,-1);
+\bf
+\draw[]  (-1, 2)  rectangle node {\begin{tabular}{c}
+چالشگر \\
+	$k\gets \mK$
+	\end{tabular}} (1,0);
+\draw [-latex](1,0.5)  -- node[midway, above] {$c\gets \Enc_{k}(m_{b})$} (6.5,0.5);
+\draw[] (6.5, 2) rectangle node[] {
+	مهاجم
+	} (8.5, 0);
+\draw [-latex](6.5,1.5) -- node[midway, above] {$m_{0}, m_{1}\gets \mM: |m_{0}| = |m_{1}|$} (1,1.5);
+\draw [-latex](0,3.5) node[above] {$b$}-- (0,2);
+\draw [-latex](7.5,0) --  (7.5,-1.5) node[below] {$b'\gets \{0, 1\}$};
+\end{tikzpicture}

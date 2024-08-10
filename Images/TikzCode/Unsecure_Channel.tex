@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=0.27]	
+\tikzstyle{every node}=[transform shape];	
+% Alice
+\node (label) at (0,0) {\includegraphics[height=7cm]{canal_alice_dep.pdf}};
+\node (label) at (0,-4) {\Huge\bf A};
+
+% Bob
+\node (label) at (30,0) {\includegraphics[height=7cm]{canal_bob_dep.pdf}};
+\node (label) at (30,-4) {\Huge\bf B};
+
+% Eve
+\node (label) at (15,-6) {\includegraphics[height=7cm]{canal_eve_dep.pdf}};
+\node (label) at (15,-10) {\Huge\bf E};
+\draw[->, line width=1mm] (12,-7) -- ++(-3,0) -- node[left] {\Huge\bf شنود} ++(0,+5.5);
+\draw[->, line width=1mm] (18,-7) -- ++(+3,0) --  node[right] {\Huge\bf دست‌کاری} ++(0,+5.5);
+
+% Canal
+\draw[line width=1mm] (4,-1) ellipse (0.7 and 1);
+\draw[line width=1mm] (25,-2) arc (-90:90:1);
+
+\draw[line width=1mm] (4,0) -- ++(21,0);
+\draw[line width=1mm] (4,-2) -- ++(21,0);
+\node (label) at (14.5, 0.8) {\Huge\bf \rl{کانال ارتباطی ناامن}};
+
+\end{tikzpicture}

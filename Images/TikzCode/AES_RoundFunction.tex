@@ -1,0 +1,73 @@
+\begin{tikzpicture}[scale=0.5]
+
+%\draw[thick, dashed,] (-1,-2) rectangle (29,7) node[above left] {\rl{تابع دور در 
+%		\en{AES}}};
+\draw[thick,->] (-3,2) -- ++(3,0);
+\draw[thick,->] (28,2) -- ++(3,0);
+
+\defineStateSize{4}
+\defineArrowLength{2}
+\defineTextSize{0.4cm}
+\defineTextArrowSize{0.3cm}
+\defineXGap{0}
+\defineYGap{5}
+\defineStateIndex{0}
+\defineLinkRound{1}
+\initdiffpath
+
+%\colorstate{
+%	....
+%	....
+%	....
+%	....
+%}{AK}
+
+\colorstate{
+	....
+	....
+	....
+	....
+}{SB}
+
+\draw[->, thick,shift={(1,-0.5)}] (0.5, 4) 
+-- ++(0, 1.5) 
+-- node[above] {\textsf{SubByte}} ++(6, 0) -- ++(0, -1.5);
+
+\colorstate{
+	...x
+	...x
+	...x
+	...x
+}{SR}
+
+\fill[color=lightgray] (15,0) rectangle ++(1,4);
+\fill[color=lightgray] (21,0) rectangle ++(1,4);
+\draw[->, thick,shift={(15,0)}] (0.5, 4) 
+-- ++(0, 1) 
+-- node[above] {$C\gets \mathbf{Mix}\times C$} ++(6, 0) 
+-- ++(0, -1);
+
+\colorstate{
+	...x
+	..x.
+	.x..
+	x...
+}{MC}
+\colorstate{
+	....
+	....
+	....
+	....
+}{AK}
+\colorstate{
+	....
+	....
+	....
+	....
+}{0}
+\path ( 2,-1) node {{\scriptsize $S_{r-1}$}};
+\path ( 8,-1) node {{\scriptsize $S_{r} = \texttt{ShiftRows}(S_{r-1})$}};
+\path (14,-1) node {{\scriptsize $\texttt{SubBytes}(S_{r})$}};
+\path (20,-1) node {{\scriptsize $\texttt{MixColumns}(S_{r})$}};
+\path (26,-1) node {{\scriptsize $\texttt{AddRoundKey}(S_{r})$}};
+\end{tikzpicture}

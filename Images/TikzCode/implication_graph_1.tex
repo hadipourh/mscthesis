@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=1.2]
+\GraphInit[vstyle=Shade]
+%\GraphInit[vstyle=Welsh]
+\SetGraphShadeColor{red!50}{black}{red}
+\SetGraphUnit{2}
+\Vertex[Math,L={X_{1} = 0@5}, LabelOut = true,x = 0, y = 0]{B}
+\Vertex[Math,L={X_{31} = 0@3}, LabelOut = true,x = 0, y = 2]{A}
+\Vertex[Math,L={X_{2} = 0@5}, LabelOut = true,x = 3, y = 1]{C}
+\Vertex[Math,L={X_{3} = 0@5}, LabelOut = true,x = 3, y = -1]{D}
+\Vertex[Math,L={X_{4} = 1@5}, LabelOut = true,x = 6, y = 0]{E}
+%\SetUpEdge[lw = 1pt,
+%color = orange,
+%labelcolor = gray!30,
+%labelstyle = {draw}]
+\tikzset{EdgeStyle/.style={->, thick, double = blue,
+	double distance = 1pt}}
+\Edge[label=$C_{1}$](A)(C)
+\Edge[label=$C_{1}$](B)(C)
+\Edge[label=$C_{2}$](B)(D)
+\Edge[label=$C_{3}$](C)(E)
+\Edge[label=$C_{3}$](D)(E)
+\end{tikzpicture}

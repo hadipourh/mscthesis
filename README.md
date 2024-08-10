@@ -15,7 +15,7 @@ xelatex main.tex
 xelatex main.tex
 ```
 
-The compiled thesis is also available in the `pdf` directory.
+The compiled thesis is also available in the `pdf` format here: [main.pdf](main.pdf).
 Also, Persian students may find the template useful for writing their own thesis. 
 
 Persian-speaking students may find the provided LaTeX template useful for their own thesis projects.

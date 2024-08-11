@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.15)  10 AUG 2024 21:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.15)  11 AUG 2024 13:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -629,8 +629,30 @@ File: tikzlibrarytrees.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfdecorationsegmentlength=\dimen342
 )
 \tikz@lib@dec@box=\box86
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadings.code.tex
+File: tikzlibraryshadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryshadings.code.tex
+File: pgflibraryshadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/share/texlive/texmf-dist/tex/latex/pgf-blur/tikzlibraryshadows.blur.code.tex  v1.02, 2012/12/09
+\pgfbs@fading@count=\count351
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/graphs/tikzlibrarygraphs.code.tex
+File: tikzlibrarygraphs.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\tikz@lib@auto@number=\count352
+\tikz@qnode@count=\count353
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks53
@@ -641,38 +663,38 @@ Package: tkz-graph 2021/01/20 2.00 base for graphs
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tkz@gr@a=\count351
-\c@tkz@gr@b=\count352
-\c@tkz@gr@c=\count353
-\c@tkz@gr@e=\count354
-\c@tkz@gr@d=\count355
-\c@tkz@gr@p=\count356
-\c@tkz@gr@i=\count357
-\c@tkz@gr@n=\count358
-\c@tkz@gr@ta=\count359
-\c@tkz@gr@tb=\count360
+\c@tkz@gr@a=\count354
+\c@tkz@gr@b=\count355
+\c@tkz@gr@c=\count356
+\c@tkz@gr@e=\count357
+\c@tkz@gr@d=\count358
+\c@tkz@gr@p=\count359
+\c@tkz@gr@i=\count360
+\c@tkz@gr@n=\count361
+\c@tkz@gr@ta=\count362
+\c@tkz@gr@tb=\count363
 )
 
-! LaTeX Error: File `diffpath.sty' not found.
+! LaTeX Error: File `./CustomLatexPackages/diffpath.sty' not found.
 
 Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: sty)
 
 Enter file name: 
-/home/hhadipour/Desktop/masterthesis/Settings/setting.tex:71: Emergency stop.
+/home/hhadipour/Desktop/masterthesis/Settings/setting.tex:74: Emergency stop.
 <read *> 
          
-l.71 \usetikzlibrary
+l.74 \usetikzlibrary
                     {positioning}^^M
 *** (cannot \read from terminal in nonstop modes)
 
  
 Here is how much of TeX's memory you used:
- 22918 strings out of 478287
- 467083 string characters out of 5849289
- 838743 words of memory out of 12000000
- 40706 multiletter control sequences out of 15000+600000
+ 24020 strings out of 478287
+ 500694 string characters out of 5849289
+ 884066 words of memory out of 12000000
+ 41774 multiletter control sequences out of 15000+600000
  469557 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,0n,80p,714b,89s stack positions out of 5000i,500n,10000p,200000b,80000s
-/home/hhadipour/Desktop/masterthesis/Settings/setting.tex:71:  ==> Fatal error occurred, no output PDF file produced!
+ 79i,1n,83p,714b,173s stack positions out of 5000i,500n,10000p,200000b,80000s
+/home/hhadipour/Desktop/masterthesis/Settings/setting.tex:74:  ==> Fatal error occurred, no output PDF file produced!

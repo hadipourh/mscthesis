@@ -5,6 +5,13 @@ The thesis was submitted in partial fulfillment of the requirements for the Mast
 
 ## Usage Note
 The thesis is written in Persian/Farsi (فارسی) and is designed to be compiled using XeLaTeX. 
+You need to install the required fonts located in the [Fonts](Fonts) folder before compiling the thesis.
+To do so, you need to run the following commands:
+```bash
+sudo cp Fonts/*.ttf /usr/share/fonts/
+sudo fc-cache -f -v
+```
+
 To compile the thesis, you will need XeTeX and the `xepersian` package.
 Use the following commands to compile the thesis:
 

@@ -25,8 +25,6 @@ xelatex main.tex
 The compiled thesis is also available in the `pdf` format here: [main.pdf](main.pdf).
 Also, Persian students may find the template useful for writing their own thesis. 
 
-Persian-speaking students may find the provided LaTeX template useful for their own thesis projects.
-
 ## Contact
 For any questions or issues regarding this repository, please feel free to contact me at [hsn.hadipour@gmail.com](hsn.hadipour@gmail.com) or open an issue in this repository.
 
